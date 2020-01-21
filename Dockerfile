@@ -1,10 +1,9 @@
-FROM debian:stretch
+FROM i386/debian:stretch
 MAINTAINER Mladen Petrovic <m.petrovic387@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN dpkg --add-architecture i386 \
-    && apt-get update \
+RUN apt-get update \
     && apt-get install -y apt-utils procps curl libc6:i386 libncurses5:i386 libstdc++5:i386 vim nano \
     && curl -SL "http://downloads.sourceforge.net/project/firebird/firebird-linux-i386/1.5.6-Release/FirebirdSS-1.5.6.5026-0.nptl.i686.tar.gz" -o firebird.tar.gz \
     && mkdir -p /usr/src/firebird \
