@@ -1,5 +1,5 @@
 FROM i386/debian:stretch
-MAINTAINER Mladen Petrovic <m.petrovic387@gmail.com>
+MAINTAINER Thomas Pulzer <t.pulzer@thesecretgamer.de>
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -21,6 +21,9 @@ ENV PATH $PATH:/opt/firebird/bin
 
 ADD librfunc.so /opt/firebird/UDF/librfunc.so
 RUN chmod +x /opt/firebird/UDF/librfunc.so
+
+ADD eq_UDF.so /opt/firebird/UDF/eq_UDF.so
+RUN chmod +x /opt/firebird/UDF/eq_UDF.so
 
 ADD run.sh /opt/firebird/run.sh
 RUN chmod +x /opt/firebird/run.sh
