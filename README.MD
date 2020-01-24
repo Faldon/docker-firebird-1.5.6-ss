@@ -44,8 +44,8 @@ for example add "-e Europe/Sarajevo" to your docker run command.
 	//enter container console
 	$ docker exec -i -t firebird /bin/bash
 
-  //backup
-  $ gbak -v -t -user SYSDBA -password masterkey localhost:/data/dbname.fdb /backup/dbname.fbk 
+    //backup
+    $ gbak -v -t -user SYSDBA -password masterkey localhost:/data/dbname.fdb /backup/dbname.fbk 
 
-   //restore 
-	$ gbak -c -v -user SYSDBA -password masterkey /backup/dbname.fbk localhost:/data/dbname.fdb
+    //restore 
+	  $ gbak -c -v -user SYSDBA -password masterkey /backup/dbname.fbk localhost:/data/dbname.fdb
